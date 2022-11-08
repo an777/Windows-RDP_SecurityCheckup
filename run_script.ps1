@@ -6,8 +6,8 @@ $username = $Args[1]
 $ip_address = $Args[3]
 
 
-#A user who will not be blocked
-$my_username = "An777"
+#A users who will not be blocked
+$my_usernames = @("An777", "TEST")
 
 #datatime
 $data = Get-Date -format 'dd/MM/yyyy HH:mm:ss'
@@ -25,7 +25,7 @@ if ($ip_address -in $current_ips) {
 }
 
 #Save to our rule
-if ($username -eq $my_username) {
+if ($username -in $my_usernames) {
 	$str +="It is me "
 } else {
 	$str +="to rule "
